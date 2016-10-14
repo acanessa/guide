@@ -1,0 +1,34 @@
+<ion-view title="Details" id="page6">
+    <ion-content padding="true" class="has-header">
+        <button class="button button" ng-click="get_location()" style='width:100%;'>
+          Update my location
+        </button>
+        <h3 id="detalles-heading1" style="color:#000000;">Destination Information</h3>
+        <div id="detalles-markdown2" style="color:#000000;">
+            <p>Name: {{place.name}}</p>
+        </div>
+        <div id="detalles-markdown3" style="color:#000000;">
+            <p>Address: {{place.address}}</p>
+        </div>
+        <div id="detalles-markdown4" style="color:#000000;">
+            <p ng-if="place.phone == 'null'">Phone: None.</p>
+            <p ng-if="place.phone != 'null'">Phone: {{place.phone}}</p>
+        </div>
+        <h3 id="detalles-heading3" style="color:#000000;">Route Information</h3>
+        <div id="detalles-markdown2" style="color:#000000;">
+            Distance: {{distance}}{{duration}}
+        <div id="detalles-markdown2" style="color:#000000;">
+            Directions:
+        </div>
+         
+        <div>
+            <div>
+                <p ng-repeat="step in directions">
+                {{step.instruction}} - {{step.distance}}
+                </p>    
+            </div>
+        </div>
+        
+        
+    </ion-content>
+</ion-view>

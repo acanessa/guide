@@ -1,0 +1,38 @@
+####SERVER######
+
+FROM debian:latest
+RUN apt-get update
+RUN apt-get install -y sudo git wget curl unzip
+RUN apt-get install -y python
+RUN apt-get install -y python2.7-dev
+RUN apt-get install -y libzbar-dev
+RUN apt-get install -y python-pip
+
+RUN apt-get install -y vim
+
+RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN apt-get install -y nodejs
+COPY ./ /root/guide/server
+WORKDIR /root/guide/server
+
+
+RUN pip install pypng
+RUN pip install zbar
+RUN pip install pillow
+RUN pip install qrtools
+
+RUN npm i -g pm2
+RUN npm install
+
+EXPOSE 7474
+EXPOSE 3000
+
+RUN node server.js
+#CMD ["pm2", "start", "server.js", "--no-daemon"]
+
+
+
+
+
+
+

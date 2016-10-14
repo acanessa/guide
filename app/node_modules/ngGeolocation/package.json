@@ -1,0 +1,48 @@
+{
+  "name": "ngGeolocation",
+  "version": "0.0.7",
+  "devDependencies": {
+    "bower": "~1.3.2",
+    "grunt": "~0.4.4",
+    "grunt-cli": "~0.1.13",
+    "phantomjs": "~1.9.7-3",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-notify": "~0.2.20",
+    "grunt-strip": "~0.2.1",
+    "grunt-karma": "~0.8.2",
+    "karma": "~0.12.9",
+    "karma-jasmine": "~0.1.5",
+    "karma-phantomjs-launcher": "~0.1.4"
+  },
+  "gitHead": "ba02eaba90a28c0534ffbdbcc4014259084b4d15",
+  "description": "###### AngularJS support for [HTML5 Geolocation API](http://www.w3.org/TR/geolocation-API/)",
+  "_id": "ngGeolocation@0.0.7",
+  "scripts": {},
+  "_shasum": "3dbe2c171a0fc14cbd60e570d07b4a4174309d1c",
+  "_from": "ngGeolocation@",
+  "_npmVersion": "3.6.0",
+  "_nodeVersion": "5.2.0",
+  "_npmUser": {
+    "name": "saike",
+    "email": "kishkoglot@gmail.com"
+  },
+  "dist": {
+    "shasum": "3dbe2c171a0fc14cbd60e570d07b4a4174309d1c",
+    "tarball": "https://registry.npmjs.org/ngGeolocation/-/ngGeolocation-0.0.7.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "saike",
+      "email": "kishkoglot@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/ngGeolocation-0.0.7.tgz_1461078512772_0.3604246024042368"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/ngGeolocation/-/ngGeolocation-0.0.7.tgz"
+}

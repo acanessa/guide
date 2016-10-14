@@ -1,0 +1,13 @@
+<ion-view title="Places" id="page5">
+    <ion-content padding="true" class="has-header">
+        <ion-list>
+            <ion-item ui-sref="tabsController.detalles" ng-repeat="place in places track by $index" ng-click="get_detail('{{place.id}}')">
+                {{$index}}. {{place.name}}
+            </ion-item>
+            <ion-item ui-sref="tabsController.detalles" ng-show="places.length == 0">There are no places in range</ion-item>            
+        </ion-list>
+        
+<!--            <ion-item ui-sref="tabsController.detalles"  class="ng-hide" ng-hide="places.length > 1">No hay lugares en rango</ion-item>            -->
+       
+    </ion-content>
+</ion-view>

@@ -1,0 +1,53 @@
+{
+  "name": "webcamjs",
+  "version": "1.0.6",
+  "description": "HTML5 Webcam Image Capture Library with Flash Fallback",
+  "author": {
+    "name": "Joseph Huckaby",
+    "email": "jhuckaby@gmail.com"
+  },
+  "homepage": "https://github.com/jhuckaby/webcamjs",
+  "license": "MIT",
+  "main": "webcam.js",
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhuckaby/webcamjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhuckaby/webcamjs/issues"
+  },
+  "keywords": [
+    "webcam",
+    "camera",
+    "getusermedia",
+    "flash",
+    "jpegcam"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "gitHead": "1f164b822507977bf746838c66b9e4332764c062",
+  "_id": "webcamjs@1.0.6",
+  "_shasum": "943227deb70de80daa31dfa037fc3e980987d3ac",
+  "_from": "webcamjs@latest",
+  "_npmVersion": "2.10.1",
+  "_nodeVersion": "0.12.4",
+  "_npmUser": {
+    "name": "jhuckaby",
+    "email": "jhuckaby+npm@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "jhuckaby",
+      "email": "jhuckaby@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "943227deb70de80daa31dfa037fc3e980987d3ac",
+    "tarball": "https://registry.npmjs.org/webcamjs/-/webcamjs-1.0.6.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/webcamjs/-/webcamjs-1.0.6.tgz"
+}

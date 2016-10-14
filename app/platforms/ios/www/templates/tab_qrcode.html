@@ -1,0 +1,17 @@
+<ion-view title="QR code" id="qr">
+<ion-content padding="true">
+        <canvas id="canvas" width="640" height="480" ng-show='false'></canvas>        
+        <video id='video'  width="640" height="480" autoplay src="{{src}}"></video>
+        <button class="button button-positive" ng-click="snap()" style='width:100%;'>
+       Take picture
+        </button>        
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">QR information is:
+                <img src='https://tradelinks.net/portal/plugin_assets/traffic/images/loading.gif' style="height:10px;" ng-show='decoding'>
+            </span>
+                <input type="text" ng-model='feedback'>
+            </label>
+        </div>
+</ion-content>  
+</ion-view>

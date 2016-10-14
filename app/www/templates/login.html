@@ -1,0 +1,24 @@
+<ion-view title="Login" id="page7">
+    <ion-content padding="true" class="has-header">
+        
+            <h2 id="login-heading2" style="color:#000000;text-align:center;">GUIDE System</h2>
+            <div class="spacer" style="width: 283px; height: 107px;"></div>
+            
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input  ng-model='form.username' type="text">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input  ng-model='form.password' type="password">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <h5  style="color:#000000;text-align:center;">{{feedback}}</h5>
+            <div class="spacer" style="height: 40px;"></div>
+            <input type="button" class="button button-stable  button-block" value="Login" ng-click='login();'>
+            
+        
+    </ion-content>
+</ion-view>

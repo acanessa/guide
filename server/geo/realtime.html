@@ -1,0 +1,191 @@
+
+<script src="../script/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="../script/bootstrap/css/bootstrap.min.css">
+<script src="../script/bootstrap/js/bootstrap.min.js"></script>
+<!--<script src="../script/angular.min.js"></script>-->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=en"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.js"></script>
+<!--angular slider-->
+<!--angular slider-->
+
+<style>
+table{
+  //margin: 0 auto !important;
+  //float: none !important;
+}
+td{
+  text-align: center;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+var users = {};    
+var geocoder;
+var map;
+var marker;  
+var blind_id;    
+var socket = io.connect("http://52.24.92.181:3000/geo");
+socket.on("connect", function () {
+    //socket.emit('cli_con','realtime',function(data){
+    socket.emit('cli_con',{id:1000,username:'realtime'},function(data){
+    
+    }); 
+});
+socket.on("response", function (response) {            
+    var data = JSON.parse(response);
+    //console.log(data)
+    var id = data.id;
+    var latitude = data.lat; //.toFixed(9);
+    var longitude = data.lon; //.toFixed(9);
+    var accuracy = data.acc; //.toFixed(9);
+    var heading = data.heading; //.toFixed(9);
+    var timestamp = data.timestamp; //.toFixed(9);
+    var speed = data.speed;
+    if (id in users){
+        users[id].setPosition(new google.maps.LatLng(latitude,longitude));       
+    }else{
+        marker = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(latitude,longitude)
+        });
+        users[id] = marker;
+        users[id].setPosition(new google.maps.LatLng(latitude,longitude));   
+    }
+    $('#latitude').val(latitude);
+    $('#longitude').val(longitude);
+    $('#accuracy').val(accuracy);
+    $('#heading').val(heading);
+    $('#timestamp').val(timestamp);    
+    $('#speed').val(speed);
+    if ($('#signal').is(':visible')){
+        $('#signal').hide();    
+    }else{
+        $('#signal').show();    
+    }
+});
+    
+socket.on("dis", function (id) { 
+    //alert (id);
+    users[id].setMap(null);
+    delete users[id]
+});
+    
+socket.on("pic", function (data) { 
+//    var picture = $('#picture');
+    console.log(data.pic)
+    var picture = document.getElementById('picture')
+    picture.src = data.pic;
+    //blind_id = data.id;
+    
+//    picture.src = data.pic;
+});    
+    
+    
+    
+ socket.on("sos", function (msg) { 
+       alert(msg);
+    });
+    
+
+
+function initialize(){
+var lat = -34.603739;
+var lon = -58.38157000000001;
+map = new google.maps.Map($('#map-canvas')[0],{
+    zoom: 14,
+    suppressInfoWindows:true,
+    center: new google.maps.LatLng(lat,lon)
+});
+};
+
+initialize();
+
+$('#send').click(function(){
+    console.log('enviando');
+    var message = $('#message').val()
+    socket.emit('pic_response',{id:'55becc235e6caea69358e153',info:message},function(data){
+        console.log('endiado')
+    })    
+    
+  })    
+    
+    
+    
+}); //ready
+
+</script>
+
+
+
+
+ 
+</html>
+
+<table align='center' class="table table-bordered" style="width: 500px;">
+    <tr>
+        <td>
+          <div id="map-canvas" name="map-canvas" style="width: 500px; height: 500px;" ></div>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" style="width: 170px;" id="latitude" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" style="width:170px;" id="longitude">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" style="width:170px;" id="accuracy">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" style="width:170px;" id="speed">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" style="width:170px;" id="heading">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" style="width:170px;" id="timestamp">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img id="picture" width="300px" height="300px" src='' />
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <textarea style="width:300px;" id = 'message'></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id='send' value="Enviar">
+                    </td>
+                </tr>
+            </table>
+        </td>        
+    </tr>    
+</table>
+
+<br>    
+<tr>
+    <td>
+        <img src='https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/Signal.png' style="width:20px; height=20px;" id='signal'/>    
+    </td>    
+</tr>
+</table>
+
+    

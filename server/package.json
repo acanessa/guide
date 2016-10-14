@@ -1,0 +1,24 @@
+{
+  "name": "sos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "cheerio": "^0.20.0",
+    "express": "^4.13.4",
+    "express-interceptor": "^1.2.0",
+    "express-jwt": "^3.3.0",
+    "georedis": "^3.0.3",
+    "jsonwebtoken": "^5.7.0",
+    "morgan": "^1.7.0",
+    "node-uuid": "^1.4.7",
+    "request": "^2.72.0",
+    "socket.io": "^1.4.5"    
+  }
+}

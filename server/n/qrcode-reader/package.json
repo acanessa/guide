@@ -1,0 +1,58 @@
+{
+  "name": "qrcode-reader",
+  "version": "0.1.1",
+  "description": "fork of lazarsoft's jsqrcode for node",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "npm run compile:all",
+    "test": "mocha",
+    "compile": "gulp compile",
+    "compile:browser": "gulp compile-browser",
+    "compile:all": "npm run compile && npm run compile:browser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edi9999/jsqrcode.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edi9999/jsqrcode/issues"
+  },
+  "homepage": "https://github.com/edi9999/jsqrcode",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "gulp": "^3.8.7",
+    "gulp-concat": "^2.3.4",
+    "gulp-watch": "^0.6.9",
+    "mocha": "^2.4.5",
+    "png-js": "^0.1.1",
+    "webpack": "^1.12.14"
+  },
+  "gitHead": "7512223627b15071636e9371d41bd71f2e7a6dbe",
+  "_id": "qrcode-reader@0.1.1",
+  "_shasum": "ab667560ba15bcc4961bde06da347d7f2e85f10c",
+  "_from": "qrcode-reader@latest",
+  "_npmVersion": "3.7.3",
+  "_nodeVersion": "5.8.0",
+  "_npmUser": {
+    "name": "edi9999",
+    "email": "hipp.edg@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "edi9999",
+      "email": "hipp.edg@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "ab667560ba15bcc4961bde06da347d7f2e85f10c",
+    "tarball": "https://registry.npmjs.org/qrcode-reader/-/qrcode-reader-0.1.1.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/qrcode-reader-0.1.1.tgz_1460356084635_0.965722891734913"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/qrcode-reader/-/qrcode-reader-0.1.1.tgz"
+}

@@ -1,0 +1,7 @@
+<ion-view title="Places in range" id="page3">
+    <ion-content padding="true" class="has-header">
+        <ion-list>
+            <ion-item ui-sref="tabsController.lugares" ng-repeat="place_type in place_types" ng-click="get_places('{{place_type.type_id}}')">{{place_type.trans}}</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
